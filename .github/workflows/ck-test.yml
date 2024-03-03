@@ -1,0 +1,17 @@
+name: Checkout localy on commit
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  ckout:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with: 
+        path: ../main_k8
+
