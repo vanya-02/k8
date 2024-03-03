@@ -13,5 +13,5 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with: 
-        path: ../main_k8
+        path: testfolder
 
