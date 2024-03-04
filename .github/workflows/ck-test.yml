@@ -12,7 +12,7 @@ jobs:
     runs-on: work-laptop
     steps:
     - name: dd
-      working-directory: ${TARGET_FOLDER}
+      working-directory: <TARGET_FOLDER>
       run: |
         pwd
         git reset --hard
