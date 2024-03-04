@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Check if directory already exists and rm it
       run: |
-        if [ -d "$GITHUB_WORKSPACE" ]; then rm -Rf "$GITHUB_WORKSPACE"; fi
+        if [ -d ${{env.GITHUB_WORKSPACE}} ]; then rm -Rf ${{env.GITHUB_WORKSPACE}}; fi
         echo ${{env.GITHUB_WORKSPACE}}
 
     - name: Checkout code
