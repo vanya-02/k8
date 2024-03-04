@@ -12,13 +12,16 @@ jobs:
   ckout:
     runs-on: work-laptop
     steps:
-    - name: Check if directory already exists and rm it
+    - name: Check if directory already exists and remove it
       run: |
         if [ -d ${{env.TARGET_FOLDER}} ]; then rm -Rf ${{env.TARGET_FOLDER}}; fi
         echo ${{env.TARGET_FOLDER}}
 
     - name: Checkout code
+    - uses: actions/checkout@v4
+
+    - name: Move the code
       run: |
-        git clone $GITHUB_REPOSITORY ${{env.TARGET_FOLDER}}
+        mv $GITHUB_WORKSPACE ${{env.TARGET_FOLDER}}
 
       
