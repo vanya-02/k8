@@ -13,7 +13,9 @@ jobs:
       GITHUB_WORKSPACE: /home/vanya/junk
     steps:
     - name: Check if directory already exists and rm it
-      run: if [ -d "$GITHUB_WORKSPACE" ]; then rm -Rf "$GITHUB_WORKSPACE"; fi
+      run: |
+        if [ -d "$GITHUB_WORKSPACE" ]; then rm -Rf "$GITHUB_WORKSPACE"; fi
+        echo $GITHUB_WORKSPACE
 
     - name: Checkout code
       uses: actions/checkout@v4
