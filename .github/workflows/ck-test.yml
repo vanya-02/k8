@@ -22,6 +22,6 @@ jobs:
 
     - name: Move the code
       run: |
-        cp $GITHUB_WORKSPACE ${{env.TARGET_FOLDER}}
+        cp -r $GITHUB_WORKSPACE ${{env.TARGET_FOLDER}}
 
       
