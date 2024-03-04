@@ -1,4 +1,6 @@
 name: Checkout locally on commit
+env:
+  TARGET_FOLDER: /home/vanya/junk
 
 on:
   push:
@@ -9,18 +11,14 @@ on:
 jobs:
   ckout:
     runs-on: work-laptop
-    env:
-      GITHUB_WORKSPACE: /home/vanya/junk
     steps:
     - name: Check if directory already exists and rm it
       run: |
-        if [ -d ${{env.GITHUB_WORKSPACE}} ]; then rm -Rf ${{env.GITHUB_WORKSPACE}}; fi
-        echo ${{env.GITHUB_WORKSPACE}}
+        if [ -d ${{env.TARGET_FOLDER}} ]; then rm -Rf ${{env.TARGET_FOLDER}}; fi
+        echo ${{env.TARGET_FOLDER}}
 
     - name: Checkout code
-      uses: actions/checkout@v4
+      run: |
+        git clone $GITHUB_REPOSITORY ${{env.TARGET_FOLDER}}
 
-      
-    # - name: Copy code to destination
-    #   run: cp -TRv ./ /home/vanya/junk/
       
