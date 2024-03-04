@@ -18,7 +18,7 @@ jobs:
         echo ${{env.TARGET_FOLDER}}
 
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     - name: Move the code
       run: |
