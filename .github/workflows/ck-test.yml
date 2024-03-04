@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      path: ./..
       
     - name: Clean the folder
       working-directory: ${{env.TARGET_FOLDER}}
