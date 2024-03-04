@@ -1,6 +1,5 @@
 name: Checkout locally on commit
-env:
-  GITHUB_WORKSPACE: /home/vanya/junk/
+
 on:
   push:
     branches: [ "master" ]
@@ -12,7 +11,11 @@ jobs:
     runs-on: work-laptop
     steps:
     - name: Checkout code
+      env:
+        GITHUB_WORKSPACE: /home/vanya/junk/
       uses: actions/checkout@v4
-    - name: Copy code to destination
-      run: cp -TRv ./ /home/vanya/junk/
+
+      
+    # - name: Copy code to destination
+    #   run: cp -TRv ./ /home/vanya/junk/
       
