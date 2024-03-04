@@ -1,5 +1,6 @@
 name: Checkout locally on commit
-
+env:
+  GITHUB_WORKSPACE: /home/vanya/junk/
 on:
   push:
     branches: [ "master" ]
@@ -10,9 +11,10 @@ jobs:
   ckout:
     runs-on: work-laptop
     steps:
+    - name: Check if directory already exists and rm it
+      run: if [ -d "$GITHUB_WORKSPACE" ]; then rm -Rf "$GITHUB_WORKSPACE"; fi
+
     - name: Checkout code
-      env:
-        GITHUB_WORKSPACE: /home/vanya/junk/
       uses: actions/checkout@v4
 
       
