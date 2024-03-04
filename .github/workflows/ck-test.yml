@@ -8,13 +8,16 @@ on:
 
  
 jobs:
-  ckout:
+  PullChanges:
     runs-on: work-laptop
     steps:
-    - name: dd
+    - name: Git pull
       working-directory: ${{env.TARGET_FOLDER}}
       run: |
         pwd
         git reset --hard
+        git clean -fd
+        git pull
+        
         
       
