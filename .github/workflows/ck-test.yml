@@ -10,7 +10,7 @@ jobs:
   ckout:
     runs-on: work-laptop
     env:
-      GITHUB_WORKSPACE: /home/vanya/junk/
+      GITHUB_WORKSPACE: /home/vanya/junk
     steps:
     - name: Check if directory already exists and rm it
       run: if [ -d "$GITHUB_WORKSPACE" ]; then rm -Rf "$GITHUB_WORKSPACE"; fi
