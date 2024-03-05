@@ -1,12 +1,11 @@
 name: Checkout locally on commit
 env:
   SCRIPTRUNNER_TARGET_FOLDER: /home/vanya/k8
-
+  REPO_URL: github.com/vanya-02/k8
 on:
   push:
     branches: master
-
- 
+    
 jobs:
   PullChanges:
     runs-on: work-laptop
@@ -21,9 +20,5 @@ jobs:
         working-directory: ${{env.SCRIPTRUNNER_TARGET_FOLDER}}
         run: |
           pwd
-          git pull  https://${{secrets.PAT}}@github.com/vanya-02/k8.git
-        
+          git pull  https://${{secrets.PAT}}@${{REPO_URL}}.git
           
-          
-        
-      
