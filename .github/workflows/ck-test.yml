@@ -1,6 +1,6 @@
 name: Checkout locally on commit
 env:
-  TARGET_FOLDER: /home/vanya/junk
+  TARGET_FOLDER: /home/vanya/k8
 
 on:
   push:
