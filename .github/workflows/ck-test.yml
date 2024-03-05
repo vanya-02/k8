@@ -10,19 +10,19 @@ on:
 jobs:
   PullChanges:
     runs-on: work-laptop
-    steps:
-      - uses: actions/checkout@v2
-      
+    steps:   
       - name: Clean the folder
         working-directory: ${{env.TARGET_FOLDER}}
-        env:
-          USERNAME: vanya-02
-          TOKEN: FrrbhwBeWBl2feEwwwUhNTQf7jGFFO17LyCt
         run: |
           pwd
           git reset --hard
           git clean -fd
-          git pull
+      - name: Pull new changes
+        working-directory: ${{env.TARGET_FOLDER}}
+        run: |
+          pwd
+          git pull  https://${{PAT}}@github.com/vanya-02/k8.git
+        
           
           
         
