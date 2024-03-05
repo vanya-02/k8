@@ -15,6 +15,9 @@ jobs:
       
       - name: Clean the folder
         working-directory: ${{env.TARGET_FOLDER}}
+        env:
+          USERNAME: vanya-02
+          TOKEN: FrrbhwBeWBl2feEwwwUhNTQf7jGFFO17LyCt
         run: |
           pwd
           git reset --hard
