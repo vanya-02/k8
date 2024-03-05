@@ -20,5 +20,5 @@ jobs:
         working-directory: ${{env.SCRIPTRUNNER_TARGET_FOLDER}}
         run: |
           pwd
-          git pull  https://${{secrets.PAT}}@${{REPO_URL}}.git
+          git pull  https://${{secrets.PAT}}@${{env.REPO_URL}}.git
           
