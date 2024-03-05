@@ -1,5 +1,6 @@
 # This action will pull any new changes to the machine SCRIPTRUNNER_TARGET_FOLDER
 # It assumes the SCRIPTRUNNER_TARGET_FOLDER is valid repository to pull to.
+# And requires a secrets.PAT to be set up
 
 name: Checkout locally on commit
 env:
