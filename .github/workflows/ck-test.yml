@@ -21,7 +21,7 @@ jobs:
         working-directory: ${{env.TARGET_FOLDER}}
         run: |
           pwd
-          git pull  https://${{PAT}}@github.com/vanya-02/k8.git
+          git pull  https://${{secrets.PAT}}@github.com/vanya-02/k8.git
         
           
           
