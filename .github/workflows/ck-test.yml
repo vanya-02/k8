@@ -1,3 +1,6 @@
+# This action will pull any new changes to the machine SCRIPTRUNNER_TARGET_FOLDER
+# It assumes the SCRIPTRUNNER_TARGET_FOLDER is valid repository to pull to.
+
 name: Checkout locally on commit
 env:
   SCRIPTRUNNER_TARGET_FOLDER: /home/vanya/k8
@@ -10,7 +13,7 @@ jobs:
   PullChanges:
     runs-on: work-laptop
     steps:   
-      - name: Clean the folder
+      - name: Clean the folder of untracked/new files and reset to HEAD
         working-directory: ${{env.SCRIPTRUNNER_TARGET_FOLDER}}
         run: |
           pwd
