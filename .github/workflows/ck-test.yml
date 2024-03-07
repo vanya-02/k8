@@ -25,7 +25,5 @@ jobs:
         run: |
           pwd
           git pull  https://${{secrets.PAT}}@${{env.REPO_URL}}.git
-          echo ${{env.REPO_URL}}
-          echo ${env.REPO_URL}
-          echo $env.REPO_URL
+
           
